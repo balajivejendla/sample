@@ -1,6 +1,4 @@
 import express from 'express'
-import AppError from "./apperror.js";
-
 const app=express()
 
 app.use(express.json())
@@ -13,10 +11,8 @@ app.post('/hi',(req,res,next)=>{
 
 
 
-        if(typeof(data)!="object"|| data === null|| Object.entries(data).length===0){
 
 
-            return next(new AppError("Check whether the req body is in right format",450))
         }
         else{
             return res.status(200).json("Good")
