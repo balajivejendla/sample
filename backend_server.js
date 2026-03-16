@@ -1,14 +1,6 @@
 import express from 'express'
 const app =express()
 
-app.use(express.json())
-
-
-
-import express from 'express'
-import Apperror from "./apperror.js";
-
-const app=express()
 
 app.use(express.json())
 
