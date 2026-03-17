@@ -8,11 +8,10 @@ app.use(express.json())
 app.post('/hi',(req,res,next)=>{
     try{
         const data=req.body
-
-
-
-
-
+        if(Object.entries(data).length===0|| typeof(data)!="object"){
+            const error=  new Error("Error not good")
+            error.statusCode=400
+            next(error)
         }
         else{
             return res.status(200).json("Good")
