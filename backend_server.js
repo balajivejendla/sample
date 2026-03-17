@@ -29,8 +29,8 @@ app.use((error,req,res,next)=>{
     })
 })
 
-app.listen((3000),()=>
-{
-    console.log("logged")
+if (process.env.NODE_ENV !== 'test') {
+    app.listen(3000, () => {
+        console.log("logged");
+    });
 }
-)
